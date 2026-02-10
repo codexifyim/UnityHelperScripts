@@ -1,5 +1,5 @@
 {
-    "name": "com.codexifyim.unity.helperscripts",
+    "name": "codexifyim-unity-helperscripts",
     "version": "1.0.0",
     "displayName": "Unity Helper Scripts",
     "description": "some helper scripts",
@@ -14,6 +14,6 @@
         "email": "luxingpanda@gmail.com",
         "url": "https://github.com/codexifyim/UnityHelperScripts"
     },
-    "dependencies": {
-    }
+    "license": "MIT",
+    "dependencies": {}
 }
