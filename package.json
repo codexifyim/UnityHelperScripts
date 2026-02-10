@@ -1,15 +1,19 @@
 {
-  "name": "com.codexifyim.UnityHelperScripts",
-  "version": "1.2.3",
-  "displayName": "Unity Helper Scripts",
-  "description": "some helper scripts",
-  "unity": "2022.3",
- "keywords": [
-    "scripting"
-  ],
-  "author": {
-    "name": "iMRAN",
-    "email": "https://github.com/codexifyim",
-    "url": "https://github.com/codexifyim/UnityHelperScripts"
-  }
+    "name": "com.codexifyim.unity.helperScripts",
+    "version": "1.0.0",
+    "displayName": "Unity Helper Scripts",
+    "description": "some helper scripts",
+    "unity": "2022.3", 
+    "keywords": [
+        "unity",
+        "scripts",
+        "utility"
+    ],
+    "author": {
+        "name": "iMRAN",
+        "email": "luxingpanda@gmail.com",
+        "url": "https://github.com/codexifyim/UnityHelperScripts"
+    },
+    "dependencies": {
+    }
 }
