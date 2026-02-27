@@ -1,2 +1,3 @@
 # Ignore Mac OS generated files
 .DS_Store
+*.meta
