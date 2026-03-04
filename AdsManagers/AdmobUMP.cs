@@ -329,9 +329,7 @@ public class AdmobUMP : MonoBehaviour
 
             _rewardedAd.Show(_ =>
             {
-                // // Debug.Log($"🏆 User rewarded: {reward.Amount} {reward.Type}");
-                // onAdCompleted?.Invoke();
-                // OnRewardedAdCompleted?.Invoke();
+                
                 MobileAdsEventExecutor.ExecuteInUpdate(() =>
                 {
                     onAdCompleted?.Invoke();
@@ -350,29 +348,7 @@ public class AdmobUMP : MonoBehaviour
         }
     }
 
-    // private IEnumerator RetryShowRewardedAd(Action onAdCompleted, int maxRetries = 3)
-    // {
-    //     int retryCount = 0;
-    //     while (retryCount < maxRetries && (_rewardedAd == null || !_rewardedAd.CanShowAd()))
-    //     {
-    //         yield return new WaitForSeconds(1f);
-    //         retryCount++;
-    //     }
-
-    //     if (_rewardedAd != null && _rewardedAd.CanShowAd())
-    //     {
-    //         _rewardedAd.Show((Reward reward) =>
-    //         {
-    //             // Debug.Log($"🏆 User rewarded: {reward.Amount} {reward.Type}");
-    //             onAdCompleted?.Invoke();
-    //             OnRewardedAdCompleted?.Invoke();
-    //         });
-    //     }
-    //     else
-    //     {
-    //         Debug.LogError("  Failed to show rewarded ad after multiple retries");
-    //     }
-    // }
+    
 
     // ===========================================================
     //   ███   INTERSTITIAL ADS (Enhanced)
@@ -409,14 +385,10 @@ public class AdmobUMP : MonoBehaviour
 
         ad.OnAdFullScreenContentClosed += () =>
         {
-            // // Debug.Log("  Interstitial ad closed - Reloading");
-            // LoadInterstitialAd();
-            // OnInterstitialAdClosed?.Invoke();
+           
             MobileAdsEventExecutor.ExecuteInUpdate(() =>
             {
-                // Debug.Log("Interstitial closed. Resuming game...");
-
-                // Safe to interact with Unity objects here
+                
                 _isShowingInterstitial = false; // RESET THE GATE
                 AudioListener.pause = false;    // RESUME AUDIO
                 Time.timeScale = 1;
@@ -429,11 +401,10 @@ public class AdmobUMP : MonoBehaviour
 
         ad.OnAdFullScreenContentFailed += error =>
         {
-            // Debug.LogError($"⚠️ Interstitial failed to show: {error.GetMessage()}");
-            // LoadInterstitialAd();
+            
             MobileAdsEventExecutor.ExecuteInUpdate(() => 
         {
-            // Debug.LogError("Interstitial failed: " + error.GetMessage());
+            
             _isShowingInterstitial = false; // RESET THE GATE
             AudioListener.pause = false;
             Time.timeScale = 1;
@@ -456,7 +427,7 @@ private bool _isShowingInterstitial = false;
         }
         else
         {
-            Debug.LogWarning("⚠️ Interstitial ad not ready. Loading...");
+            Debug.LogWarning("Interstitial ad not ready. Loading...");
             LoadInterstitialAd();
         }
     }
@@ -500,7 +471,7 @@ private bool _isShowingInterstitial = false;
         }
 
         _bannerView.Show();
-        // Debug.Log("📌 Banner ad shown");
+        
     }
 
     public void HideBanner()
@@ -508,7 +479,7 @@ private bool _isShowingInterstitial = false;
         if (_bannerView != null)
         {
             _bannerView.Hide();
-            // Debug.Log("📌 Banner ad hidden");
+            
         }
     }
 
@@ -518,7 +489,7 @@ private bool _isShowingInterstitial = false;
         {
             _bannerView.Destroy();
             _bannerView = null;
-            // Debug.Log("📌 Banner ad destroyed");
+            
         }
     }
 
